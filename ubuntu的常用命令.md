@@ -35,6 +35,13 @@ rm -r -f dir
 find / -name virtualenvwrapper.sh
 s
 
+##ls
+ls -a 显示所有文件
+ls -l 显示所有文件的详细信息
+
+##stat
+stat file 查看文件的外部属性
+
 
 #注意事项
 ##自带的python别乱删……想玩其他版本的可以配置虚拟环境
