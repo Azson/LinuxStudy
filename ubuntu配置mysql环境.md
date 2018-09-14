@@ -4,13 +4,13 @@ sudo apt-get isntall mysql-server
 期间会提示设置root用户的密码
 
 ##2.测试是否安装完成
-service myusql start 启动mysql服务
+service mysql start 启动mysql服务
 
 sudo netstat -tap|grep mysql 查看mysql是否在运行
 
 进入mysql界面
 mysql -uroot -p
-然后输入密码即可
+然后输入密码即可，有时候会提示"Access denied"但后面没有"using password"字样，则需要在此命令前面使用sudo
 
 
 ##3.遇到一些问题
@@ -28,6 +28,16 @@ gedit /etc/my.cnf
 修改sockt的值为你找到的.sock文件路径
 
 重启服务即可
+
+###2.未设置root密码
+mysql5.7环境下，可以键入命令"vim /etc/mysql/debian.cnf"可以看到mysql默认的用户和密码
+
+通过上步找到的用户和密码进去，在通过sql语句
+“update mysql.user set authentication_string=password('password') where user='root'and Host = 'localhost';”
+
+来设置root账户的密码
+
+完成后记得重启服务，或者"flush priviledegs"
 
 ####2.设置数据库的编码方式
 进入数据库后，输入

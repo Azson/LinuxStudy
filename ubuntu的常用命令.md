@@ -36,11 +36,36 @@ find / -name virtualenvwrapper.sh
 s
 
 ##ls
-ls -a 显示所有文件
-ls -l 显示所有文件的详细信息
+ls -a 显示所有文件，包括隐藏文件
+ls -l 显示所有文件的详细信息，包括文件的权限、大小、创建者、创建时间等等
+
+进入到某个文件夹下面后，可以键入"du -sh"查看该目录的大小
 
 ##stat
 stat file 查看文件的外部属性
+
+##df
+查看磁盘使用情况
+df -h
+
+##grep
+global search regular expression(RE) and print out the line
+
+grep [-acinv] [--color=auto] '搜寻字符串' filename
+
+选项与参数：
+
+-a ：将 binary 文件以 text 文件的方式搜寻数据
+
+-c ：计算找到 '搜寻字符串' 的次数
+
+-i ：忽略大小写的不同，所以大小写视为相同
+
+-n ：顺便输出行号
+
+-v ：反向选择，亦即显示出没有 '搜寻字符串' 内容的那一行！
+
+--color=auto ：可以将找到的关键词部分加上颜色的显示
 
 ##后台运行程序
 一般来说可以之间在命令尾部加上符号“&”，表示放到一个作业队列
